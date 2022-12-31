@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "344203657813",
+    "project_id": "bmicalculation-39153",
+    "storage_bucket": "bmicalculation-39153.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344203657813:android:54481d20adcaaf10660adc",
+        "android_client_info": {
+          "package_name": "com.example.bmi_calculator_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344203657813-0vgpdh7gi0sfvg2taj2vuat90g4hi11c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBSb4dFqAecm-neOCsWWp0erS3KAS0o6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344203657813-0vgpdh7gi0sfvg2taj2vuat90g4hi11c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "344203657813-b0ci1ii517fto0c0o4t8c9ju7d8h2cee.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bmiCalculatorFirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
