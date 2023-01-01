@@ -14,7 +14,7 @@ class AuthService extends GetxService {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: "betulcelebi_@gmail.com",
+        email: "betulcelebi@gmail.com",
         password: "123456",
       );
     } on FirebaseAuthException catch (e) {
