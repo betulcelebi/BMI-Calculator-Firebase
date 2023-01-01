@@ -10,7 +10,7 @@ class AccountPage extends GetView<AccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: SafeArea(
@@ -18,27 +18,19 @@ class AccountPage extends GetView<AccountController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
-
-                // logo
-                SizedBox(
-                  width: 110,
-                  height: 110,
-                  // child: Image.asset("assets/unlock.png")
+                Container(
+                  width: double.infinity,
+                  height: 350,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                          image: AssetImage(
+                            "assets/nutritionist.jpg",
+                          ),
+                          fit: BoxFit.cover)),
                 ),
 
-                const SizedBox(height: 50),
-
-                // welcome back, you've been missed!
-                Text(
-                  'Welcome back you\'ve been missed!',
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 16,
-                  ),
-                ),
-
-                const SizedBox(height: 25),
+                const SizedBox(height: 40),
 
                 MyTextField(
                   onChanged: (value) => controller.email = value,
@@ -46,7 +38,7 @@ class AccountPage extends GetView<AccountController> {
                   obscureText: false,
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
                 // password textfield
                 MyTextField(
                   onChanged: (value) => controller.password = value,

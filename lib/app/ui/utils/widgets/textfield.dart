@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
@@ -17,6 +19,8 @@ class MyTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        textCapitalization: TextCapitalization.none,
         onChanged: onChanged,
         obscureText: obscureText,
         decoration: InputDecoration(

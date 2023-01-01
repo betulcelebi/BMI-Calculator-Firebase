@@ -231,6 +231,8 @@ class HomePage extends GetView<HomeController> {
               GestureDetector(
                 onTap: () {
                   controller.isBMIControl();
+                  controller.db.addUserKnowladge(controller.height,
+                      controller.weight, controller.bmiScore);
                 },
                 child: Container(
                   alignment: Alignment.center,

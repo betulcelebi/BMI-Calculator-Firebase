@@ -1,10 +1,10 @@
 import 'package:bmi_calculator_firebase/app/controllers/home_controller.dart';
+import 'package:bmi_calculator_firebase/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_1.dart';
 import 'package:get/get.dart';
-import '../../../controllers/detail_controller.dart';
 
 class DetailPage extends GetView<HomeController> {
   @override
@@ -75,11 +75,11 @@ class DetailPage extends GetView<HomeController> {
                       Container(
                         width: 100,
                         height: 250,
-                        margin: const EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40, left: 5),
                         padding: const EdgeInsets.all(0),
                         child: Image.asset(
                           "assets/female-doctor.png",
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       ChatBubble(
@@ -107,13 +107,16 @@ class DetailPage extends GetView<HomeController> {
           ),
           GestureDetector(
             onTap: () {
-              Get.back();
+              //controller.authService.signOut();
+              // controller.db.addBmi(controller.bmiScore);
+              Get.toNamed(Routes.HOME);
             },
             child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.only(top: 160),
               width: 350,
               height: 50,
+              // ignore: sort_child_properties_last
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

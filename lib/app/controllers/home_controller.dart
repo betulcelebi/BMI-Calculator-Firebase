@@ -1,10 +1,16 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:bmi_calculator_firebase/shared/auth_service.dart';
+import 'package:bmi_calculator_firebase/shared/database_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../routes/app_pages.dart';
 
 class HomeController extends GetxController {
+  AuthService authService = AuthService();
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  DatabaseService db = DatabaseService();
   var isSelected = false.obs;
   Color? bmiStatusColor;
   var bmiStatus;
