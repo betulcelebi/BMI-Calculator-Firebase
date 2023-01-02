@@ -11,6 +11,7 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Form(
           child: Column(
             children: [
@@ -231,15 +232,16 @@ class HomePage extends GetView<HomeController> {
               GestureDetector(
                 onTap: () {
                   controller.isBMIControl();
-                  controller.db.addUserKnowladge(controller.height,
-                      controller.weight, controller.bmiScore);
+                  // controller.db.addUserKnowladge(controller.height,
+                  //     controller.weight, controller.bmiScore);
                 },
                 child: Container(
                   alignment: Alignment.center,
                   margin: const EdgeInsets.only(top: 160),
                   width: 350,
                   height: 50,
-                  child: const Text(
+                  // ignore: sort_child_properties_last
+                  child:  const Text(
                     "Calculate BMI",
                     style: TextStyle(
                         color: Color.fromARGB(255, 250, 245, 245),

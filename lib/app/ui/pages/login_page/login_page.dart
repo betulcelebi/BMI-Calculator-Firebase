@@ -1,5 +1,4 @@
-import 'package:bmi_calculator_firebase/app/bindings/account_binding.dart';
-import 'package:bmi_calculator_firebase/app/ui/pages/account_page/account_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/login_controller.dart';
@@ -15,6 +14,7 @@ class LoginPage extends GetView<LoginController> {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        reverse: true,
         physics: const NeverScrollableScrollPhysics(),
         child: SafeArea(
           child: Center(
@@ -69,7 +69,7 @@ class LoginPage extends GetView<LoginController> {
                   onTap: () {
                     controller.authService
                         .signUser(controller.email, controller.password);
-                    Get.toNamed(Routes.HOME);
+                 
                   },
                   child: Container(
                     padding: const EdgeInsets.all(15),

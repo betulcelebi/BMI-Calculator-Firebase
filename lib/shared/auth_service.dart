@@ -16,13 +16,17 @@ class AuthService extends GetxService {
             email: email,
             password: password,
           )
-          .then((value) => Get.snackbar("Creating user", "Turned Login Page"))
-          .then((value) => Get.toNamed(Routes.LOGIN));
+          .then((value) => Get.snackbar("Creating user", "Turned Login Page"));
+
+       Get.toNamed(Routes.LOGIN);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         print('The account already exists for that email.');
+      }
+      else if (email == "" || password == "" ){
+        return Get.defaultDialog(middleText: 'Cannot be blank');
       }
     } catch (e) {
       print(e);
@@ -33,14 +37,17 @@ class AuthService extends GetxService {
     try {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password)
-          .then((value) => Get.snackbar("Success", "Logged in"))
-          .then((value) => Get.toNamed(Routes.HOME));
+          .then((value) => Get.offAndToNamed(Routes.HOME,
+              result: Get.snackbar('Success Login', "success")));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
         return Get.defaultDialog(title: "User not available, please register");
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
+      }
+       else if (email == "" || password == "" ){
+        return Get.defaultDialog(middleText: 'Cannot be blank');
       }
     }
   }

@@ -1,5 +1,5 @@
 import 'package:bmi_calculator_firebase/app/controllers/home_controller.dart';
-import 'package:bmi_calculator_firebase/app/routes/app_pages.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
@@ -75,7 +75,7 @@ class DetailPage extends GetView<HomeController> {
                       Container(
                         width: 100,
                         height: 250,
-                        margin: const EdgeInsets.only(top: 40, left: 5),
+                        margin: const EdgeInsets.only(top: 40),
                         padding: const EdgeInsets.all(0),
                         child: Image.asset(
                           "assets/female-doctor.png",
@@ -109,7 +109,7 @@ class DetailPage extends GetView<HomeController> {
             onTap: () {
               //controller.authService.signOut();
               // controller.db.addBmi(controller.bmiScore);
-              Get.toNamed(Routes.HOME);
+              Get.back();
             },
             child: Container(
               alignment: Alignment.center,

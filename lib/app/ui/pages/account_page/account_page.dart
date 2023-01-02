@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/account_controller.dart';
-import '../../../routes/app_pages.dart';
+
 import '../../utils/widgets/textfield.dart';
 
 class AccountPage extends GetView<AccountController> {
@@ -10,8 +10,10 @@ class AccountPage extends GetView<AccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        reverse: true,
         physics: const NeverScrollableScrollPhysics(),
         child: SafeArea(
           child: Center(
@@ -23,7 +25,7 @@ class AccountPage extends GetView<AccountController> {
                   height: 350,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage(
                             "assets/nutritionist.jpg",
                           ),
@@ -53,8 +55,7 @@ class AccountPage extends GetView<AccountController> {
                   onTap: () {
                     controller.authService
                         .createUser(controller.email, controller.password);
-
-                    Get.toNamed(Routes.LOGIN);
+                    // Get.defaultDialog(middleText: "Please a register account");
                   },
                   child: Container(
                     padding: const EdgeInsets.all(15),

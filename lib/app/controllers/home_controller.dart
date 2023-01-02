@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, unrelated_type_equality_checks
 
 import 'package:bmi_calculator_firebase/shared/auth_service.dart';
 import 'package:bmi_calculator_firebase/shared/database_service.dart';
@@ -48,8 +48,41 @@ class HomeController extends GetxController {
     }
   }
 
-  void isBMIControl() {
-    if (height < 50 || height > 250) {
+  isBMIControl() {
+    if (weight == 0.0 || height == 0.0) {
+      Get.dialog(
+        AlertDialog(
+          title: const Text('Alert',
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
+          content: const Text(
+            'Cannot be blank',
+            style: TextStyle(color: Colors.black, fontSize: 12),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text('Cancel',
+                  style: TextStyle(
+                      color: Color(0xff468FF8),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold)),
+            ),
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text('OK',
+                  style: TextStyle(
+                      color: Color(0xff468FF8),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold)),
+            ),
+          ],
+        ),
+      );
+    } else if (height < 50 || height > 250) {
       Get.dialog(
         AlertDialog(
           title: const Text('Alert',
@@ -113,6 +146,7 @@ class HomeController extends GetxController {
       );
     } else {
       calculateBMI();
+      db.addUserKnowladge(height, weight, bmiScore);
     }
   }
 }

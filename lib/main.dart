@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.LOGIN,
+        initialRoute: Routes.SPLASH,
         enableLog: true,
         title: 'BMI App Firebase',
         theme: ThemeData(
