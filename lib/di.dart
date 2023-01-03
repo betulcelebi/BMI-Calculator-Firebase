@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_firebase/shared/auth_service.dart';
+import 'package:bmi_calculator_firebase/shared/database_service.dart';
 import 'package:bmi_calculator_firebase/shared/firebase_service.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,9 @@ class DependencyInjection {
     );
     await Get.putAsync(
       () => AuthService().init(),
+    );
+    await Get.putAsync(
+      () => DatabaseService().init(),
     );
   }
 }
